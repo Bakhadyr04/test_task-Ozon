@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Progress Block</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Тестовое задание</h1>
+
+  <!-- Основной контейнер (портрет 320x568, ландшафт 568x320) -->
+  <div class="progress-block" id="progressBlock">
+    <!-- Вспомогательные штрихпунктирные линии -->
+    <div class="layout-helper"></div>
+
+    <div class="progress-title">Progress</div>
+
+    <!-- Кольцо для состояния Hidden -->
+    <div class="progress-content" id="progressContent">
+      <div class="progress-ring-container">
+        <svg class="progress-ring" viewBox="0 0 100 100">
+          <circle class="background-circle" cx="50" cy="50" r="45"></circle>
+          <circle class="progress-bar" cx="50" cy="50" r="45"
+                  stroke-dasharray="0 282.743"></circle>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Блок контролов: Value, Animate, Hide -->
+    <div class="controls">
+      <!-- Value в овальном стиле -->
+      <div class="control-row">
+        <!-- Овальный инпут для значения -->
+        <div class="value-pill-container">
+          <input
+            type="number"
+            id="valueInput"
+            min="0"
+            max="100"
+            value="0"
+            class="value-pill"
+          />
+        </div>
+        <span>Value</span>
+      </div>
+
+      <!-- Animate (анимация прогресса кольца) -->
+      <div class="control-row">
+        <label class="switch">
+          <input type="checkbox" id="animateToggle">
+          <span class="slider"></span>
+        </label>
+        <span>Animate</span>
+      </div>
+
+      <!-- Hide (скрывает контент) -->
+      <div class="control-row">
+        <label class="switch">
+          <input type="checkbox" id="hideToggle">
+          <span class="slider"></span>
+        </label>
+        <span>Hide</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="progress.js"></script>
+</body>
+</html>
